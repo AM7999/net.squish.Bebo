@@ -7,24 +7,24 @@ using UnityEngine;
 namespace net.squish.Bebo {
     public class Bebo_Fool {
         public static void Add() {
-            Character yourCharacter = new Character("Bebo", "Bebo_CH") {
+            Character Bebo = new Character("Bebo", "Bebo_CH") {
                 HealthColor = Pigments.Purple,
-                UsesBasicAbility = true, //set this to false if you don't want your fool to use slap
-                UsesAllAbilities = false, //set this to true if you want your fool to use all their abilities (like Longliver, Gospel or Mordrake)
-                MovesOnOverworld = true, //set this to false if you want your fool to move like Gospel or Leviat in the overworld
-                //BasicAbility = basicAbility //if your character has a different basic ability than Slap, you need to define it above the character code (this block) to call it here
-                FrontSprite = ResourceLoader.LoadSprite("Bebo_front", new Vector2(0.5f, 0f), 32), // Only needs Image file name as long as it's embedded, no .png/.file addition needed.
+                UsesBasicAbility = true,
+                UsesAllAbilities = false, 
+                MovesOnOverworld = true, 
+                //BasicAbility = basicAbility 
+                FrontSprite = ResourceLoader.LoadSprite("Bebo_front", new Vector2(0.5f, 0f), 32), 
                 BackSprite = ResourceLoader.LoadSprite("CharacterNameBack", new Vector2(0.5f, 0f), 32),
-                OverworldSprite = ResourceLoader.LoadSprite("Bebo_front", new Vector2(0.5f, 0f), 32), // Portrait and Overworld sprites are 64x64
-                DamageSound = LoadedAssetsHandler.GetCharacter("Nowak_CH").damageSound, //character IDs end in _CH
-                DeathSound = LoadedAssetsHandler.GetEnemy("Revola_EN").deathSound, //enemy IDs end in _EN
-                DialogueSound = LoadedAssetsHandler.GetCharacter("Nowak_CH").dxSound, //.dxSound is for Dialogue sounds
+                OverworldSprite = ResourceLoader.LoadSprite("Bebo_front", new Vector2(0.5f, 0f), 32),
+                DamageSound = LoadedAssetsHandler.GetCharacter("Nowak_CH").damageSound,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                DeathSound = LoadedAssetsHandler.GetEnemy("Revola_EN").deathSound, 
+                DialogueSound = LoadedAssetsHandler.GetCharacter("Nowak_CH").dxSound, 
                 // Support - IgnoredAbilitiesForSupportBuilds
                 IgnoredAbilitiesForDPSBuilds = [1], //For excluding abilities when game chooses fool loadout, not necessary for all fools
             };
-            yourCharacter.GenerateMenuCharacter(ResourceLoader.LoadSprite("CharacterNameMenu"), ResourceLoader.LoadSprite("CharacterNameLocked")); //Menu Locked and Unlocked sprites are 32x48.
-            yourCharacter.AddPassives([Passives.Catalyst, Passives.SkittishGenerator(2)]); // If you want a different existing passive at a different degree, most of them have a built-in generator.
-            yourCharacter.SetMenuCharacterAsFullDPS(); // Sets a Support/DPS bias for your fool. Used when your Fool is picked randomly by the game.
+            Bebo.GenerateMenuCharacter(ResourceLoader.LoadSprite("CharacterNameMenu"), ResourceLoader.LoadSprite("CharacterNameLocked")); //Menu Locked and Unlocked sprites are 32x48.
+            Bebo.AddPassives([Passives.Catalyst, Passives.SkittishGenerator(2)]); // If you want a different existing passive at a different degree, most of them have a built-in generator.
+            Bebo.SetMenuCharacterAsFullDPS(); // Sets a Support/DPS bias for your fool. Used when your Fool is picked randomly by the game.
             // Support - .SetMenuCharacterAsFullSupport()
 
             //general format for effects is EffectToDo EffectName = ScriptableObject.CreateInstance<EffectToDo>();
@@ -146,13 +146,13 @@ namespace net.squish.Bebo {
             thirdAbility1.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Status_Spotlight)]);
             thirdAbility1.AddIntentsToTarget(Targeting.Slot_SelfSlot, new string[1] { "FleetingIntent" }); //method of writing custom intents
             
-            yourCharacter.AddLevelData(1, new Ability[] { ability0, otherAbility0, }); //# (5) is health at level.
-            yourCharacter.AddLevelData(10, new Ability[] { ability0, otherAbility0 }); //Levels are added sequentially
-            yourCharacter.AddLevelData(15, new Ability[] { ability1, otherAbility1 });
-            yourCharacter.AddLevelData(20, new Ability[] { ability1, otherAbility1 });
+            Bebo.AddLevelData(1, new Ability[] { ability0, otherAbility0, }); //# (5) is health at level.
+            Bebo.AddLevelData(10, new Ability[] { ability0, otherAbility0 }); //Levels are added sequentially
+            Bebo.AddLevelData(15, new Ability[] { ability1, otherAbility1 });
+            Bebo.AddLevelData(20, new Ability[] { ability1, otherAbility1 });
             
             
-            yourCharacter.AddCharacter(true, false); //The first bool (true/false) is whether the fool is unlocked initially. The second is whether they show up in shops.
+            Bebo.AddCharacter(true, false); //The first bool (true/false) is whether the fool is unlocked initially. The second is whether they show up in shops.
         }
     }
 }

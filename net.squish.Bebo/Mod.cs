@@ -10,6 +10,7 @@ namespace net.squish.Bebo {
         public void Awake() {
             Logger.LogInfo("Bebo Mod Init!");
             net.squish.Bebo.Bebo_Fool.Add();
+            net.squish.Bebo.Item.Hairball.Add();
         }
     }
 }
