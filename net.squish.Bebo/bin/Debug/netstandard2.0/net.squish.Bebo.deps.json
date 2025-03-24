@@ -286,7 +286,7 @@
         "runtime": {
           "Unity.InputSystem.dll": {
             "assemblyVersion": "1.2.0.0",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.2.0.0"
           }
         }
       },

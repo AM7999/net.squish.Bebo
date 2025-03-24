@@ -7,8 +7,6 @@
 </PropertyGroup>
 
 <ItemGroup>
-
-  <EmbeddedResource Include="Bebo_front.png" />
   
   <Reference Include="0Harmony">
     <HintPath>..\Assemblies\0Harmony.dll</HintPath>
@@ -289,6 +287,16 @@
   <Reference Include="UnityEngine.XRModule">
     <HintPath>..\Assemblies\UnityEngine.XRModule.dll</HintPath>
   </Reference>
+</ItemGroup>
+
+<ItemGroup>
+  <EmbeddedResource Include="Resources\AttackIcons\Bebo.CuddleAttack.png" />
+  <EmbeddedResource Include="Resources\AttackIcons\Bebo.SwipeAttack.png" />
+  <EmbeddedResource Include="Resources\CharacterIcons\BeboFront.png" />
+</ItemGroup>
+
+<ItemGroup>
+  <Folder Include="Resources\CharacterSounds\" />
 </ItemGroup>
 
 </Project>
