@@ -24,5 +24,11 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
+    - name: Upload Assembly
+      uses: actions/upload-artifact@v4
+      with: 
+        name: net.squish.Bebo
+        path: ./net.squish.Bebo/bin/Debug/netstandard2.0/net.squish.Bebo.dll
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    
