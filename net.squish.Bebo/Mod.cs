@@ -8,7 +8,7 @@ namespace net.squish.Bebo {
     
     public class BeboMod : BaseUnityPlugin {
         public void Awake() {
-            Logger.LogInfo("mrow");
+            Logger.LogInfo("bebo");
             net.squish.Bebo.BeboFool.Add();
             
             // Only called a hairball for marketing purposes
