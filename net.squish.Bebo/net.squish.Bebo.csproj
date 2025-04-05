@@ -296,6 +296,10 @@
   <EmbeddedResource Include="Resources\CharacterIcons\BeboFront.png" />
 </ItemGroup>
 
+<ItemGroup>
+  <Content Include="obj\Debug\netstandard2.0\project.assets.json" />
+</ItemGroup>
+
 <!--<ItemGroup>-->
 <!--  <Folder Include="Resources\CharacterSounds\" />-->
 <!--</ItemGroup>-->

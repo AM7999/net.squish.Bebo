@@ -68,7 +68,7 @@ namespace net.squish.Bebo {
 
             // Ability Loop
             for (int i = 0; i < 4; i++) {
-                Ability ability1 = new Ability(ability1Names[i] + " Them Away", "ABILITY_1") {
+                Ability ability1 = new Ability(ability1Names[i] + " Them Away", "ABILITY_1_" + i) {
                     Description = "Perform one random fool ability. Has a " + fleetingChances[i] + " percent chance to apply fleeting(1) to this party member",
                     AbilitySprite = ResourceLoader.LoadSprite("Bebo.SwipeAttack"),
                     Cost = [Pigments.Red, Pigments.Blue],
@@ -80,7 +80,7 @@ namespace net.squish.Bebo {
                 };
                 ability1.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Damage_7_10)]); //Damage_#_# is parameters for damage calculations. Heal_#_# for heals. Ranges for all numbers between given #s. EX: 7,8,9,10.
 
-                Ability ability2 = new Ability(ability2Names[i] + " them in Poison", "ABILITY_2") {
+                Ability ability2 = new Ability(ability2Names[i] + " them in Poison", "ABILITY_2_" + i) {
                     Description = "Give the opposing enemy 3 poison. Has a " + fleetingChances[i] + " Percent chance to apply fleeting(1) to this party member",
                     AbilitySprite = ResourceLoader.LoadSprite("Bebo.PoisonAttack"),
                     Cost = [Pigments.Red, Pigments.Blue],
@@ -91,7 +91,7 @@ namespace net.squish.Bebo {
                     ]
                 };
 
-                Ability ability3 = new Ability(ability3Names[i] + " on Them", "ABILITY_3") {
+                Ability ability3 = new Ability(ability3Names[i] + " on Them", "ABILITY_3_" + i) {
                     Description = "Heal the Party Member to the Left for 5 Health. Has a " + fleetingChances[i] + " Percent chance to apply fleeting(1) to this party member",
                     AbilitySprite = ResourceLoader.LoadSprite("Bebo.CuddleAttack"),
                     Cost = [Pigments.Red, Pigments.Blue],
