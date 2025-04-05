@@ -18,7 +18,7 @@ namespace net.squish.Bebo {
                 UsesAllAbilities = false, 
                 MovesOnOverworld = true, 
                 FrontSprite = ResourceLoader.LoadSprite("BeboFront", new Vector2(0.5f, 0f), 32), 
-                BackSprite = ResourceLoader.LoadSprite("CharacterNameBack", new Vector2(0.5f, 0f), 32),
+                BackSprite = ResourceLoader.LoadSprite("BeboFront", new Vector2(0.5f, 0f), 32),
                 OverworldSprite = ResourceLoader.LoadSprite("BeboFront", new Vector2(0.5f, 0f), 32),
                 DamageSound = LoadedAssetsHandler.GetCharacter("Nowak_CH").damageSound,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
                 DeathSound = LoadedAssetsHandler.GetEnemy("Revola_EN").deathSound, 
@@ -27,7 +27,7 @@ namespace net.squish.Bebo {
                 IgnoredAbilitiesForDPSBuilds = [1], //For excluding abilities when game chooses fool loadout, not necessary for all fools
             };
             
-            Bebo.GenerateMenuCharacter(ResourceLoader.LoadSprite("CharacterNameMenu"), ResourceLoader.LoadSprite("CharacterNameLocked")); //Menu Locked and Unlocked sprites are 32x48.
+            Bebo.GenerateMenuCharacter(ResourceLoader.LoadSprite("BeboFront"), ResourceLoader.LoadSprite("BeboFront")); //Menu Locked and Unlocked sprites are 32x48.
             Bebo.AddPassives([]); // If you want a different existing passive at a different degree, most of them have a built-in generator.
             Bebo.SetMenuCharacterAsFullDPS(); // Sets a Support/DPS bias for your fool. Used when your Fool is picked randomly by the game.
             // Support - .SetMenuCharacterAsFullSupport()
@@ -61,28 +61,28 @@ namespace net.squish.Bebo {
             string[] ability1Names = { "Bat", "Swipe", "Claw", "Tear" };
             string[] ability2Names = { "Dip", "Splatter", "Coat", "Drown" };
             string[] ability3Names = { "Lean", "Lay", "Depend", "Love" };
+            //string[] ability3Hlth = {}
             string[] fleetingChances = { "70", "50", "50", "30" };
             
             int[] beboHealth = { 7, 8, 10, 12 };
 
             // Ability Loop
             for (int i = 0; i < 4; i++) {
-                Ability ability1 = new Ability( ability1Names[i] + " Them Away", "ABILITY_1") {
+                Ability ability1 = new Ability(ability1Names[i] + " Them Away", "ABILITY_1") {
                     Description = "Perform one random fool ability. Has a " + fleetingChances[i] + " percent chance to apply fleeting(1) to this party member",
                     AbilitySprite = ResourceLoader.LoadSprite("Bebo.SwipeAttack"),
                     Cost = [Pigments.Red, Pigments.Blue],
                     Visuals = Visuals.Scream, //Visuals are now under 'Visuals. '. List here: https://github.com/kondorriano/BrutalAPI/wiki/Visuals Visual Aid here: https://www.youtube.com/watch?v=YJsGBPA-OP0
                     AnimationTarget = Targeting.Slot_Front,
-                    Effects =
-                    [
+                    Effects = [
                         Effects.GenerateEffect(IndirectDamage, 3, Targeting.Slot_Front), // In order, calls for (EffectToDo, #ToApply, Targeting)
                     ]
                 };
                 ability1.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Damage_7_10)]); //Damage_#_# is parameters for damage calculations. Heal_#_# for heals. Ranges for all numbers between given #s. EX: 7,8,9,10.
 
-                Ability ability2 = new Ability( ability2Names[i] + " them in Poison", "ABILITY_2") {
+                Ability ability2 = new Ability(ability2Names[i] + " them in Poison", "ABILITY_2") {
                     Description = "Give the opposing enemy 3 poison. Has a " + fleetingChances[i] + " Percent chance to apply fleeting(1) to this party member",
-                    AbilitySprite = ResourceLoader.LoadSprite("AbilityIcon"),
+                    AbilitySprite = ResourceLoader.LoadSprite("Bebo.PoisonAttack"),
                     Cost = [Pigments.Red, Pigments.Blue],
                     Visuals = Visuals.Scream,
                     AnimationTarget = Targeting.Slot_Front,
@@ -91,7 +91,7 @@ namespace net.squish.Bebo {
                     ]
                 };
 
-                Ability ability3 = new Ability( ability3Names[i] + " on Them", "ABILITY_3") {
+                Ability ability3 = new Ability(ability3Names[i] + " on Them", "ABILITY_3") {
                     Description = "Heal the Party Member to the Left for 5 Health. Has a " + fleetingChances[i] + " Percent chance to apply fleeting(1) to this party member",
                     AbilitySprite = ResourceLoader.LoadSprite("Bebo.CuddleAttack"),
                     Cost = [Pigments.Red, Pigments.Blue],

@@ -248,7 +248,7 @@
   <Reference Include="UnityEngine.UnityCurlModule">
     <HintPath>..\Assemblies\UnityEngine.UnityCurlModule.dll</HintPath>
   </Reference>
-  <Reference Include="UnityEngine.UnityTestProtocolModule">
+<Reference Include="UnityEngine.UnityTestProtocolModule">
     <HintPath>..\Assemblies\UnityEngine.UnityTestProtocolModule.dll</HintPath>
   </Reference>
   <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
@@ -292,11 +292,12 @@
 <ItemGroup>
   <EmbeddedResource Include="Resources\AttackIcons\Bebo.CuddleAttack.png" />
   <EmbeddedResource Include="Resources\AttackIcons\Bebo.SwipeAttack.png" />
+  <EmbeddedResource Include="Resources\AttackIcons\Bebo.PoisonAttack.png"/>
   <EmbeddedResource Include="Resources\CharacterIcons\BeboFront.png" />
 </ItemGroup>
 
-<ItemGroup>
-  <Folder Include="Resources\CharacterSounds\" />
-</ItemGroup>
+<!--<ItemGroup>-->
+<!--  <Folder Include="Resources\CharacterSounds\" />-->
+<!--</ItemGroup>-->
 
 </Project>
