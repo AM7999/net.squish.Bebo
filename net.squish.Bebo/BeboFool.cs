@@ -18,8 +18,8 @@ namespace net.squish.Bebo {
                 UsesAllAbilities = false, 
                 MovesOnOverworld = true, 
                 FrontSprite = ResourceLoader.LoadSprite("BeboFront", new Vector2(0.5f, 0f), 32), 
-                BackSprite = ResourceLoader.LoadSprite("CharacterNameBack", new Vector2(0.5f, 0f), 32),
-                OverworldSprite = ResourceLoader.LoadSprite("BeboFront", new Vector2(0.5f, 0f), 32),
+                BackSprite = ResourceLoader.LoadSprite("BeboBack", new Vector2(0.5f, 0f), 32),
+                OverworldSprite = ResourceLoader.LoadSprite("BeboOverworld", new Vector2(0.5f, 0f), 32),
                 DamageSound = LoadedAssetsHandler.GetCharacter("Nowak_CH").damageSound,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
                 DeathSound = LoadedAssetsHandler.GetEnemy("Revola_EN").deathSound, 
                 DialogueSound = LoadedAssetsHandler.GetCharacter("Nowak_CH").dxSound, 
@@ -59,14 +59,14 @@ namespace net.squish.Bebo {
             ScarsApply._Status = StatusField.Scars; //Defines what exact effect will be used. Even if the EffectName reads "ScarsApply", if it calls for StatusField.Rupture, it will apply Rupture.
 
             // Arrays for leveling up
-            string[] ability1Names = { "Bat", "Swipe", "Claw", "Tear" };
-            string[] ability2Names = { "Dip", "Splatter", "Coat", "Drown" };
-            string[] ability3Names = { "Lean", "Lay", "Depend", "Love" };
+            string[] ability1Names =   { "Bat", "Swipe", "Claw", "Tear" };
+            string[] ability2Names =   { "Dip", "Splatter", "Coat", "Drown" };
+            string[] ability3Names =   { "Lean", "Lay", "Depend", "Love" };
             string[] fleetingChances = { "70", "50", "50", "30" };
 			
-			int[] poisonChances = { 1, 1, 2, 3 };
+			int[] poisonChances =  { 1, 1, 2, 3 };
 			int[] ability1Damage = { 3, 4, 4, 5};
-			int[] beboHealing = { 5, 6, 7, 8 };
+			int[] beboHealing =    { 5, 6, 7, 8 };
             
             int[] beboHealth = { 7, 8, 10, 12 };
 
@@ -86,7 +86,7 @@ namespace net.squish.Bebo {
 
                 Ability ability2 = new Ability(ability2Names[i] + " them in Poison", "ABILITY_2") {
                     Description = "Give the opposing enemy 3 poison. Has a " + fleetingChances[i] + " Percent chance to apply fleeting(1) to this party member",
-                    AbilitySprite = ResourceLoader.LoadSprite("AbilityIcon"),
+                    AbilitySprite = ResourceLoader.LoadSprite("Bebo.PoisonAttack"),
                     Cost = [Pigments.Red, Pigments.Blue],
                     Visuals = Visuals.Scream,
                     AnimationTarget = Targeting.Slot_Front,
