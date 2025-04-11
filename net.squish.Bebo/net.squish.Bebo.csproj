@@ -293,7 +293,9 @@
   <EmbeddedResource Include="Resources\AttackIcons\Bebo.CuddleAttack.png" />
   <EmbeddedResource Include="Resources\AttackIcons\Bebo.SwipeAttack.png" />
   <EmbeddedResource Include="Resources\AttackIcons\Bebo.PoisonAttack.png"/>
-  <EmbeddedResource Include="Resources\CharacterIcons\BeboFront.png" />
+  <EmbeddedResource Include="Resources\CharacterIcons\BeboBack.png"/>
+  <EmbeddedResource Include="Resources\CharacterIcons\BeboFront.png"/>
+  <EmbeddedResource Include="Resources\CharacterIcons\BeboOverworld.png"/>
 </ItemGroup>
 
 <ItemGroup>
