@@ -104,7 +104,7 @@ namespace net.squish.Bebo {
                     AnimationTarget = Targeting.Slot_Front,
                     Effects = [
 						// healing was weirdly easy to add
-                        Effects.GenerateEffect(healEffect, beboHealing[i], Targeting.Slot_Left),
+                        Effects.GenerateEffect(healEffect, beboHealing[i], Targeting.Slot_AllyLeft),
                     ]
                 };
                 Bebo.AddLevelData(beboHealth[i], new Ability[] { ability1, ability2, ability3 }); 
