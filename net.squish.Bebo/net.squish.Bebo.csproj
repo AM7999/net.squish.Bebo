@@ -297,6 +297,16 @@
   <EmbeddedResource Include="Resources\CharacterIcons\BeboFront.png"/>
   <EmbeddedResource Include="Resources\CharacterIcons\BeboOverworld.png"/>
 </ItemGroup>
+<!-- 
+<ItemDefinitionGroup>
+  <CustomBuildStep>
+    <Command>xcopy </Command>
+    <Outputs>$(TargetName).cab</Outputs>
+    <Inputs>$(ProjectDir)main.cpp</Inputs>
+  </CustomBuildStep>
+</ItemDefinitionGroup> -->
+
+<!--just a buildstep so it generates a zip with the mod-->
 
 <ItemGroup>
   <Content Include="obj\Debug\netstandard2.0\project.assets.json" />

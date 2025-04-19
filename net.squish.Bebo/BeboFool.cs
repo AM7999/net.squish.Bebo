@@ -27,7 +27,7 @@ namespace net.squish.Bebo {
                 IgnoredAbilitiesForDPSBuilds = [1], //For excluding abilities when game chooses fool loadout, not necessary for all fools
             };
             
-            Bebo.GenerateMenuCharacter(ResourceLoader.LoadSprite("CharacterNameMenu"), ResourceLoader.LoadSprite("CharacterNameLocked")); //Menu Locked and Unlocked sprites are 32x48.
+            Bebo.GenerateMenuCharacter(ResourceLoader.LoadSprite("BeboOverworld"), ResourceLoader.LoadSprite("CharacterNameLocked")); //Menu Locked and Unlocked sprites are 32x48.
             Bebo.AddPassives([]); // If you want a different existing passive at a different degree, most of them have a built-in generator.
             Bebo.SetMenuCharacterAsFullDPS(); // Sets a Support/DPS bias for your fool. Used when your Fool is picked randomly by the game.
             // Support - .SetMenuCharacterAsFullSupport()

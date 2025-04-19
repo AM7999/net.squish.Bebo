@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("net.squish.Bebo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+35e35d946abd93f9a2024179b3352844584362a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+367dcb18e6aa24e31564847b428ba602311a398d")]
 [assembly: System.Reflection.AssemblyProductAttribute("net.squish.Bebo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("net.squish.Bebo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
